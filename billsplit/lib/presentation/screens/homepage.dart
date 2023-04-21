@@ -1,4 +1,4 @@
-import 'package:billsplit/widgets/home_page_summary.dart';
+import 'package:billsplit/presentation/widgets/home_page_summary.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {

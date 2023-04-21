@@ -1,4 +1,4 @@
-import 'package:billsplit/widgets/nav_bar_button.dart';
+import 'package:billsplit/presentation/widgets/nav_bar/nav_bar_button.dart';
 import 'package:flutter/material.dart';
 
 class FloatingNavBar extends StatefulWidget {
