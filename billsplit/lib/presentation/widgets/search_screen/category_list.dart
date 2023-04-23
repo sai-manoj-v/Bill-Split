@@ -16,7 +16,8 @@ class _CategoryListState extends State<CategoryList> {
   List categories = ['All', 'Groups', 'Friends', 'Transactions'];
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 400),
       margin: const EdgeInsets.only(
           top: kDefaultPadding / 4, bottom: kDefaultPadding / 2),
       height: 30,
@@ -47,7 +48,10 @@ class _CategoryListState extends State<CategoryList> {
                   color: const Color.fromARGB(255, 55, 55, 55).withOpacity(.1),
                 )
               ],
-              color: index == selectedIndex ? Colors.amber : Colors.transparent,
+              gradient: LinearGradient(
+                  colors: index == selectedIndex
+                      ? [Colors.amber, const Color(0xFFFFD54F)]
+                      : [Colors.transparent, Colors.transparent]),
               shape: SmoothRectangleBorder(
                 borderRadius: SmoothBorderRadius(
                   cornerRadius: 10,

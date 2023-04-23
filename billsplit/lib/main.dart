@@ -40,12 +40,12 @@ class _MainAppState extends State<MainApp> {
   Widget build(BuildContext context) {
     //To set status bar icon color dynamically
     SystemUiOverlayStyle statusAndNavBarTheme = SystemUiOverlayStyle(
-      systemNavigationBarColor: Colors.transparent.withOpacity(0.1),
+      //systemNavigationBarColor: Colors.transparent.withOpacity(0.1),
       systemNavigationBarIconBrightness: Brightness.light,
       statusBarIconBrightness:
-          _selectedIndex == 0 ? Brightness.light : Brightness.dark,
+          [0, 2].contains(_selectedIndex) ? Brightness.light : Brightness.dark,
       statusBarBrightness:
-          _selectedIndex == 0 ? Brightness.dark : Brightness.light,
+          [0, 2].contains(_selectedIndex) ? Brightness.dark : Brightness.light,
     );
 
     return MaterialApp(
@@ -69,8 +69,8 @@ class _MainAppState extends State<MainApp> {
               controller: controller,
               children: const [
                 Search(),
-                SafeArea(child: Groups()),
-                SafeArea(child: HomePage()),
+                Groups(),
+                HomePage(),
                 SafeArea(child: Activity()),
                 SafeArea(child: Reports()),
               ],
@@ -89,7 +89,7 @@ class _MainAppState extends State<MainApp> {
                   ],
                   shape: SmoothRectangleBorder(
                     borderRadius: SmoothBorderRadius(
-                      cornerRadius: 30,
+                      cornerRadius: 25,
                       cornerSmoothing: 1.0,
                     ),
                   ),
@@ -107,7 +107,7 @@ class _MainAppState extends State<MainApp> {
                           horizontal: 10, vertical: 8),
                       duration: const Duration(milliseconds: 400),
                       tabBackgroundColor: Colors.white,
-                      color: const Color(0xff37474F),
+                      color: primaryColor,
                       backgroundColor: Colors.green,
                       tabs: [
                         NavBarButton(
