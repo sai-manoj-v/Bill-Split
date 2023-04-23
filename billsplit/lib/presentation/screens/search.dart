@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../constants.dart';
-import '../widgets/search_box.dart';
+import '../widgets/nav_bar/search_box.dart';
 import '../widgets/search_screen/category_list.dart';
 
 class Search extends StatefulWidget {
