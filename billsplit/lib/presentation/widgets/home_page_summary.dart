@@ -164,7 +164,7 @@ class _HomePageSummaryState extends State<HomePageSummary> {
                             child: Text('\$79.85',
                                 style: TextStyle(
                                     //color: Color(0xFFff4507),
-                                    color: const Color(0xFFebfbe8),
+                                    color: Color.fromARGB(255, 29, 29, 29),
                                     fontSize: (height / 9) * 0.4,
                                     fontWeight: FontWeight.w600))),
                         Row(

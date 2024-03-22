@@ -111,24 +111,10 @@ class _MainAppState extends State<MainApp> {
                       backgroundColor: Colors.green,
                       tabs: [
                         NavBarButton(
-                          icon: LineIcons.search,
+                          icon: LineIcons.userFriends,
                           textColor: Colors.white,
                           text: Text(
-                            'Search',
-                            style: navBarTextStyle,
-                          ),
-                        ),
-                        NavBarButton(
-                          icon: LineIcons.userFriends,
-                          text: Text(
-                            'Groups',
-                            style: navBarTextStyle,
-                          ),
-                        ),
-                        NavBarButton(
-                          icon: LineIcons.home,
-                          text: Text(
-                            'Home',
+                            'Friends',
                             style: navBarTextStyle,
                           ),
                         ),
@@ -140,9 +126,23 @@ class _MainAppState extends State<MainApp> {
                           ),
                         ),
                         NavBarButton(
+                          icon: LineIcons.home,
+                          text: Text(
+                            'Home',
+                            style: navBarTextStyle,
+                          ),
+                        ),
+                        NavBarButton(
                           icon: LineIcons.pieChart,
                           text: Text(
                             'Reports',
+                            style: navBarTextStyle,
+                          ),
+                        ),
+                        NavBarButton(
+                          icon: LineIcons.user,
+                          text: Text(
+                            'Profile',
                             style: navBarTextStyle,
                           ),
                         ),
