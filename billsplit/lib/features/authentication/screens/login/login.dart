@@ -36,21 +36,76 @@ class LoginScreen extends StatelessWidget {
 
               // Form
               Form(
-                  child: Column(
-                children: [
-                  // Email Address
-                  TextFormField(
-                    decoration: InputDecoration(
-                        prefixIcon: Icon(Iconsax.direct_right),
-                        labelText: ConstantTexts.email),
-                  ),
-                  const SizedBox(
-                    height: spaceBtwInputFields,
-                  )
+                  child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: spaceBtwSections),
+                child: Column(
+                  children: [
+                    // Email Address
+                    TextFormField(
+                      decoration: const InputDecoration(
+                          prefixIcon: Icon(Iconsax.direct_right),
+                          labelText: ConstantTexts.email),
+                    ),
+                    const SizedBox(
+                      height: spaceBtwInputFields,
+                    ),
 
-                  // Password
-                  
-                ],
+                    // Password
+                    TextFormField(
+                      decoration: const InputDecoration(
+                          prefix: Icon(Iconsax.password_check),
+                          labelText: ConstantTexts.password,
+                          suffixIcon: Icon(Iconsax.eye_slash)),
+                    ),
+                    const SizedBox(
+                      height: spaceBtwInputFields / 2,
+                    ),
+
+                    // Remember Me & Forgot Password
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        // Remember Me
+                        Row(
+                          children: [
+                            Checkbox(value: true, onChanged: (value) {}),
+                            const Text(ConstantTexts.rememberMe)
+                          ],
+                        ),
+
+                        // Forget Password
+                        TextButton(
+                            onPressed: () {},
+                            child: const Text(ConstantTexts.forgotPassword))
+                      ],
+                    ),
+                    const SizedBox(
+                      height: spaceBtwSections,
+                    ),
+
+                    // Sign In Button
+                    SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        child: const Text(ConstantTexts.signin),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: spaceBtwItems,
+                    ),
+
+                    // Create Account Button
+                    SizedBox(
+                      width: double.infinity,
+                      child: OutlinedButton(
+                        onPressed: () {},
+                        child: const Text(ConstantTexts.createAccount),
+                      ),
+                    ),
+                    const SizedBox(height: spaceBtwSections,),
+                  ],
+                ),
               ))
             ],
           ),
