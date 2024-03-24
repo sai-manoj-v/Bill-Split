@@ -1,4 +1,5 @@
-import 'package:billsplit/constants.dart';
+import 'package:billsplit/utils/constants/colors.dart';
+import 'package:billsplit/utils/constants/sizes.dart';
 import 'package:figma_squircle/figma_squircle.dart';
 import 'package:flutter/material.dart';
 
@@ -35,8 +36,8 @@ class _HomePageSummaryState extends State<HomePageSummary> {
     return Stack(alignment: Alignment.topCenter, children: [
       //White Background for summary
       Container(
-        height: (height / 9) * 2,
-        margin: EdgeInsets.symmetric(horizontal: width * 0.04),
+        height: (height / 10) * 2,
+        margin: const EdgeInsets.symmetric(horizontal: pmMd),
         decoration: ShapeDecoration(
           shadows: [
             BoxShadow(
@@ -53,7 +54,7 @@ class _HomePageSummaryState extends State<HomePageSummary> {
           color: Colors.white,
           shape: SmoothRectangleBorder(
             borderRadius: SmoothBorderRadius(
-              cornerRadius: 40,
+              cornerRadius: cardRadiusLg,
               cornerSmoothing: 1.0,
             ),
           ),
@@ -66,65 +67,34 @@ class _HomePageSummaryState extends State<HomePageSummary> {
             Expanded(
               flex: 2,
               child: Container(
-                height: height * 0.07,
+                height: height * 0.03,
                 margin: EdgeInsets.fromLTRB(
-                    width * 0.15, height * 0.02, 0, height * 0.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SelectionContainer.disabled(
-                        child: Text('Hello,',
-                            textDirection: TextDirection.ltr,
-                            style: TextStyle(
-                              color: Color(0xFF757575),
-                              fontSize: height / 55,
-                              fontWeight: FontWeight.w200,
-                            ))),
-                    SelectionContainer.disabled(
-                        child: Text('Manoj!',
-                            style: TextStyle(
+                    width * 0.1, height * 0.015, 0, height * 0.0),
+                child: RichText(
+                  text: TextSpan(
+                    style: const TextStyle(
+                      fontSize: 14.0,
+                      color: Colors.black,
+                    ),
+                    children: <TextSpan>[
+                      TextSpan(text: 'Hello, ', style: TextStyle(
+                              color: const Color(0xFF757575),
+                              fontSize: height / 45,
+                              fontWeight: FontWeight.w400,
+                              fontFamily: 'Poppins',
+                            )),
+                      TextSpan(text: 'Manoj !', style: TextStyle(
                                 color: primaryColor,
-                                fontSize: height / 40,
-                                fontWeight: FontWeight.w600)))
-                  ],
-                ),
-              ),
-            ),
-            Expanded(
-              flex: 1,
-              child: Container(
-                height: height * 0.05,
-                width: 20,
-                decoration: ShapeDecoration(
-                  color: primaryColor,
-                  shape: SmoothRectangleBorder(
-                    borderRadius: SmoothBorderRadius(
-                      cornerRadius: 20,
-                      cornerSmoothing: 1.0,
-                    ),
+                                fontSize: height / 45,
+                                fontWeight: FontWeight.w800,
+                                fontFamily: 'Poppins',
+                                )),
+                    ],
                   ),
-                ),
-                margin: EdgeInsets.fromLTRB(
-                    0, height * 0.02, width * 0.13, height * 0.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: const [
-                    Icon(
-                      Icons.notifications_outlined,
-                      color: Colors.white,
-                      size: 30,
-                    ),
-                    Icon(
-                      Icons.person_outlined,
-                      color: Colors.white,
-                      size: 30,
-                    ),
-                  ],
-                ),
+                )
               ),
             ),
+            
           ]),
           Stack(
             children: [

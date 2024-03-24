@@ -128,7 +128,7 @@ class _NavBarButtonState extends State<NavBarButton>
             widget.onPressed?.call();
           },
           child: Container(
-            padding: widget.margin,
+            padding: EdgeInsets.zero,
             child: AnimatedContainer(
               curve: Curves.easeOut,
               padding: widget.padding,

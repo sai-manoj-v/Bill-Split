@@ -1,4 +1,5 @@
-import 'package:billsplit/presentation/widgets/nav_bar/nav_bar_button.dart';
+import 'package:billsplit/ui/widgets/nav_bar/nav_bar_button.dart';
+import 'package:billsplit/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
 class FloatingNavBar extends StatefulWidget {
@@ -8,7 +9,7 @@ class FloatingNavBar extends StatefulWidget {
     this.selectedIndex = 0,
     this.onTabChange,
     this.gap = 0,
-    this.padding = const EdgeInsets.all(25),
+    this.padding = const EdgeInsets.all(pmMd),
     this.activeColor,
     this.color,
     this.rippleColor = Colors.transparent,
@@ -84,6 +85,7 @@ class _FloatingNavBarState extends State<FloatingNavBar> {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
+        padding: EdgeInsets.all(8),
         color: Colors.transparent,
         elevation: widget.elevation,
         child: Row(

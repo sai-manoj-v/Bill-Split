@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../constants.dart';
+import '../../../utils/constants/sizes.dart';
+import '../../../utils/constants/colors.dart';
 
 class SearchBox extends StatelessWidget {
   const SearchBox({
@@ -13,10 +14,10 @@ class SearchBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(kDefaultPadding),
+      margin: const EdgeInsets.all(pmMd),
       padding: const EdgeInsets.symmetric(
-        horizontal: kDefaultPadding,
-        vertical: kDefaultPadding / 8, // 5 top and bottom
+        horizontal: pmMd,
+        vertical: pmMd / 8, // 5 top and bottom
       ),
       decoration: BoxDecoration(
         color: primaryTransparentColor,

@@ -1,7 +1,8 @@
 import 'package:figma_squircle/figma_squircle.dart';
 import 'package:flutter/material.dart';
 
-import '../../../constants.dart';
+import '../../../utils/constants/sizes.dart';
+import '../../../utils/constants/colors.dart';
 
 // We need statefull widget because we are gonna change some state on our category
 class CategoryList extends StatefulWidget {
@@ -13,13 +14,13 @@ class CategoryList extends StatefulWidget {
 class _CategoryListState extends State<CategoryList> {
   // by default first item will be selected
   int selectedIndex = 0;
-  List categories = ['All', 'Groups', 'Friends', 'Transactions'];
+  List categories = ['Groups', 'Friends', 'Transactions'];
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 400),
       margin: const EdgeInsets.only(
-          top: kDefaultPadding / 4, bottom: kDefaultPadding / 2),
+          top: pmMd / 4, bottom: pmMd / 2),
       height: 30,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
@@ -33,14 +34,14 @@ class _CategoryListState extends State<CategoryList> {
           child: Container(
             alignment: Alignment.center,
             margin: EdgeInsets.only(
-              left: index == 0 ? kDefaultPadding : kDefaultPadding / 4,
+              left: index == 0 ? pmMd : pmMd / 4,
               // At end item it add extra 20 right  padding
-              right: index == categories.length - 1 ? kDefaultPadding : 0,
+              right: index == categories.length - 1 ? pmMd : 0,
             ),
             padding: EdgeInsets.symmetric(
                 horizontal: index == selectedIndex
-                    ? kDefaultPadding
-                    : kDefaultPadding / 2),
+                    ? pmMd
+                    : pmMd / 2),
             decoration: ShapeDecoration(
               shadows: [
                 BoxShadow(

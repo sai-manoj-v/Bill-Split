@@ -1,15 +1,18 @@
-import 'package:billsplit/constants.dart';
-import 'package:billsplit/presentation/widgets/home_page_summary.dart';
+import 'package:billsplit/utils/constants/colors.dart';
+import 'package:billsplit/ui/widgets/home_page_summary.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class DashboardPage extends StatefulWidget {
+
+  const DashboardPage({this.restorationId, super.key});
+
+  final String? restorationId;
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<DashboardPage> createState() => _DashboardPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _DashboardPageState extends State<DashboardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +30,7 @@ class _HomePageState extends State<HomePage> {
                   Container(
                     margin: const EdgeInsets.only(top: 10),
                     decoration: const BoxDecoration(
-                      color: kBackgroundColor,
+                      color: kBackgroundColorLight,
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(40),
                         topRight: Radius.circular(40),

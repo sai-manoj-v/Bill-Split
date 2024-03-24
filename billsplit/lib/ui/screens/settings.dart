@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Reports extends StatefulWidget {
-  const Reports({Key? key}) : super(key: key);
+class Settings extends StatefulWidget {
+  const Settings({this.restorationId, super.key});
+  final String? restorationId;
   @override
-  State<StatefulWidget> createState() => _ReportsState();
+  State<StatefulWidget> createState() => _SettingsState();
 }
 
-class _ReportsState extends State<Reports> {
+class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
     return Column(

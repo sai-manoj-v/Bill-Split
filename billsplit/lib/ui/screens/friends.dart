@@ -1,24 +1,25 @@
-import 'package:billsplit/constants.dart';
-import 'package:billsplit/model/groups.dart';
+import 'package:billsplit/utils/constants/colors.dart';
+import 'package:billsplit/model/friend.dart';
 import 'package:flutter/material.dart';
 
-class Groups extends StatefulWidget {
-  const Groups({Key? key}) : super(key: key);
+class Friends extends StatefulWidget {
+  const Friends({this.restorationId, super.key});
+  final String? restorationId;
   @override
-  State<StatefulWidget> createState() => _GroupsState();
+  State<StatefulWidget> createState() => _FriendsState();
 }
 
-class _GroupsState extends State<Groups> with SingleTickerProviderStateMixin {
-  int _selectedGroup = 0;
+class _FriendsState extends State<Friends> with SingleTickerProviderStateMixin {
+  int _selectedFriend = 0;
   late TabController _tabController;
-  static List<Group> groupsList = [
-    Group("Desert Palm Village + Volta", 1, "", 30.45, 5),
-    Group("Volta", 1, "", 1000.45, 8),
-    Group("Friends", 1, "", 197.45, 9),
-    Group("Onnix", 1, "", 78.45, 12),
-    Group("Non-Group", 1, "", 57.45, 16),
-    Group("ASU", 1, "", 26.45, 4),
-    Group("Saguaro", 1, "", 13.45, 6)
+  static List<Friend> groupsList = [
+    Friend("Desert Palm Village + Volta", 1, "", 30.45, 5),
+    Friend("Volta", 1, "", 1000.45, 8),
+    Friend("Friends", 1, "", 197.45, 9),
+    Friend("Onnix", 1, "", 78.45, 12),
+    Friend("Non-Friend", 1, "", 57.45, 16),
+    Friend("ASU", 1, "", 26.45, 4),
+    Friend("Saguaro", 1, "", 13.45, 6)
   ];
 
   @override
@@ -35,11 +36,11 @@ class _GroupsState extends State<Groups> with SingleTickerProviderStateMixin {
 
   void update() {}
 
-  Widget _buildGroupCard(int index, String title, double pendingBalance) {
+  Widget _buildFriendCard(int index, String title, double pendingBalance) {
     return GestureDetector(
       onTap: () {
         setState(() {
-          _selectedGroup = index;
+          _selectedFriend = index;
         });
       },
       child: Container(
@@ -48,10 +49,10 @@ class _GroupsState extends State<Groups> with SingleTickerProviderStateMixin {
         width: 175.0,
         decoration: BoxDecoration(
           color:
-              _selectedGroup == index ? primaryColor : const Color(0xFFF5F7FB),
+              _selectedFriend == index ? primaryColor : const Color(0xFFF5F7FB),
           borderRadius: BorderRadius.circular(20.0),
           boxShadow: [
-            _selectedGroup == index
+            _selectedFriend == index
                 ? const BoxShadow(
                     color: Colors.black45,
                     offset: Offset(0, 2),
@@ -71,7 +72,7 @@ class _GroupsState extends State<Groups> with SingleTickerProviderStateMixin {
                 maxLines: 1,
                 softWrap: false,
                 style: TextStyle(
-                  color: _selectedGroup == index
+                  color: _selectedFriend == index
                       ? Colors.white
                       : Color(0xFFAFB4C6),
                   fontSize: 28.0,
@@ -85,7 +86,7 @@ class _GroupsState extends State<Groups> with SingleTickerProviderStateMixin {
               child: Text(
                 pendingBalance.toString(),
                 style: TextStyle(
-                  color: _selectedGroup == index
+                  color: _selectedFriend == index
                       ? Colors.amber.shade200
                       : Colors.black,
                   fontSize: 30.0,
@@ -114,7 +115,7 @@ class _GroupsState extends State<Groups> with SingleTickerProviderStateMixin {
               children: const <Widget>[
                 //SizedBox(width: 20.0),
                 Text(
-                  'Groups',
+                  'Friends',
                   style: TextStyle(
                     fontSize: 28.0,
                     color: primaryColor,
@@ -135,7 +136,7 @@ class _GroupsState extends State<Groups> with SingleTickerProviderStateMixin {
                 if (index == 0) {
                   return SizedBox(width: 20.0);
                 }
-                return _buildGroupCard(
+                return _buildFriendCard(
                   index - 1,
                   groupsList[index - 1].groupName!,
                   groupsList[index - 1].pendingBalance!,
@@ -198,7 +199,7 @@ class _GroupsState extends State<Groups> with SingleTickerProviderStateMixin {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Text(
-                      "Group Balances",
+                      "Friend Balances",
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 18.0,
@@ -267,7 +268,7 @@ class _GroupsState extends State<Groups> with SingleTickerProviderStateMixin {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Text(
-                      "Group Info",
+                      "Friend Info",
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 18.0,
